@@ -1,4 +1,6 @@
 'use strict'
+
+
 // 1
 function getArrayParams(...arr) {
   let min = Infinity;
@@ -9,6 +11,7 @@ function getArrayParams(...arr) {
     if (arr[i] > max) max = arr[i];
     if (arr[i] < min) min = arr[i];
     sum += arr[i];
+
   }
   
   let avg = Number((sum / arr.length).toFixed(2));
