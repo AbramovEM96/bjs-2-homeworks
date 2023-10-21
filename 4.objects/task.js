@@ -10,8 +10,10 @@ Student.prototype.setSubject = function (subjectName) {
 };
 
 Student.prototype.addMarks = function (...marksToAdd) {
-    return this.marks ? this.marks.push(...marksToAdd) : NaN
-};
+    if (this.hasOwnProperty("marks")) {
+        this.marks.push(...marksToAdd);
+      }   
+}
 
 Student.prototype.getAverage = function () {
     return this.marks.reduce(function (acc, mark) {
