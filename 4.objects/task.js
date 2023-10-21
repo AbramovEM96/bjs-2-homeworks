@@ -10,16 +10,13 @@ Student.prototype.setSubject = function (subjectName) {
 };
 
 Student.prototype.addMarks = function (...marksToAdd) {
-    if(this.marks === undefined){
-        this.marks = [];
-    }
-    marksToAdd.forEach(mark => this.marks.push(marksToAdd));
+    return this.marks ? this.marks.push(...marksToAdd) : NaN
 };
 
 Student.prototype.getAverage = function () {
-    let sum = this.marks.reduce((acc, itm) => acc + itm);
-    let average = sum  / this.marks.length;
-    return average;
+    return this.marks.reduce(function (acc, mark) {
+        return acc + mark;
+      }, 0) / this.marks.length; 
 }
 
 Student.prototype.exclude = function (reason) {
