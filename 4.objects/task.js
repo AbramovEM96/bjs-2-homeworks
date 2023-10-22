@@ -23,7 +23,7 @@ Student.prototype.getAverage = function () {
         else return 0;
       }
       else return 0;
-}
+};
 
 Student.prototype.exclude = function (reason) {
     delete this.subject;
