@@ -11,22 +11,22 @@ class PrintEditionItem {
     fix() {
       this._state *= 1.5;
       if (this._state < 0) {
-        return this._state = 0;
+        this._state = 0;
       }
       if (this._state > 100) {
-        return this._state = 100;
+        this._state = 100;
       }
-      return this._state;
+        this._state;
     }
   
     set state(number) {
       if (number < 0) {
-        return this._state = 0;
+        this._state = 0;
       }
       if (number > 100) {
-        return this._state = 100;
+         this._state = 100;
       }
-     return this._state = number;
+         this._state = number;
     }
   
     get state() {
@@ -84,8 +84,8 @@ class PrintEditionItem {
       }
     }
   
-    findBookBy(type, value) {
-      let findB = this.books.find(element => element[type] === value);
+    findBookBy(type, val) {
+      let findB = this.books.find(element => element[type] === val);
       if (findB) {
         return findB;
       }
@@ -95,7 +95,7 @@ class PrintEditionItem {
     giveBookByName(bookName) {
       let findBook = this.findBookBy("name", bookName);
       if (findBook) {
-        for (var i = 0; i < this.books.length; i++) {
+        for (let i = 0; i < this.books.length; i++) {
           if(this.books[i].name === bookName) {
             this.books.splice(i,1);
           } 
